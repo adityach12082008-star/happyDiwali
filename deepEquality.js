@@ -37,9 +37,9 @@ function areEqual(value1, value2) {
       return areEqualArrays(value1, value2);
     case "object":
       return areEqualObjects(value1, value2);
+    default:
+      return value1 === value2;
   }
-
-  return value1 === value2;
 }
 
 module.exports = {
