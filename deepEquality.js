@@ -1,0 +1,42 @@
+function getType(value) {
+  if (Array.isArray(value)) return "array";
+  if (value === null) return "null";
+  return typeof value;
+}
+
+function areEqualArrays(value1, value2) {
+  if (value1.length !== value2.length) return false;
+
+  for (let index = 0; index < value1.length; index++) {
+    if (!areEqual(value1[index], value2[index])) return false;
+  }
+  return true;
+}
+
+function areEqualObjects(value1, value2) {
+  const keysA = Object.keys(value1);
+  const keysB = Object.keys(value2);
+
+  if (keysA.length !== keysB.length) return false;
+
+  for (const keys of keysA) {
+    if (!Object.hasOwn(value2, keys)) return false;
+    if (!areEqual(value1[keys], value2[keys])) return false;
+  }
+  return true;
+}
+
+function areEqual(value1, value2) {
+  if (getType(value1) !== getType(value2)) return false;
+
+  if (getType(value1) === "array") return areEqualArrays(value1, value2);
+
+  if (getType(value1) !== "array" && getType(value1) === "object") {
+    return areEqualObjects(value1, value2);
+  }
+  return value1 === value2;
+}
+
+module.exports = {
+  areEqual,
+};
