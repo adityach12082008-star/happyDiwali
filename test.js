@@ -6,15 +6,15 @@ function test(message, expected, value1, value2) {
   console.log(`${isPassed}  |  ${message}`);
 }
 function testNumbers() {
-  test("different numbers should be un-qual", false, 1, 2);
-  test("same numbers should be equal", true, 1, 1);
+  test("different numbers , un-qual", false, 1, 2);
+  test("same numbers , equal", true, 1, 1);
 }
 function testBooleans() {
-  test("different booleans should be unequal", false, false, true);
-  test("same booleans should be equal", true, true, true);
+  test("different booleans , unequal", false, false, true);
+  test("same booleans , equal", true, true, true);
 }
 function testStrings() {
-  test("different alphabets should be unequal", false, "a", "b");
+  test("different alphabets , unequal", false, "a", "b");
   test("case sensitive,unequal", false, "aditya-superstar", "Aditya-superstar");
 }
 function testArrays() {
