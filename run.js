@@ -1,4 +1,4 @@
-const array = [1, 2, 3, 1, 2, 3, 1, 1, 1, 4, 5, 1, 2, 3, 5, 1, 1, 2];
+const array = [1, 2, 3, 1, 2, 3, 1, 1, 1, 4, 5, 1, 2, 3, 5, 1, 1, 2, 2];
 
 function decideDirection(array, start) {
   if (array.length === 0 || array.length === 1) return;
