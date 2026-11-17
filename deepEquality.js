@@ -27,8 +27,13 @@ function areEqualObjects(value1, value2) {
   return true;
 }
 
+function areSameType(value1, value2) {
+  if (getType(value1) === getType(value2)) return true;
+  return false;
+}
+
 function areEqual(value1, value2) {
-  if (getType(value1) !== getType(value2)) return false;
+  if (!areSameType(value1, value2)) return false;
 
   switch (getType(value1)) {
     case "NaN":
