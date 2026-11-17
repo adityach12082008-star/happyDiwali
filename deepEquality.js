@@ -1,6 +1,7 @@
 function getType(value) {
   if (Array.isArray(value)) return "array";
   if (value === null) return "null";
+  if (Number.isNaN(value)) return "NaN";
   return typeof value;
 }
 
@@ -29,11 +30,15 @@ function areEqualObjects(value1, value2) {
 function areEqual(value1, value2) {
   if (getType(value1) !== getType(value2)) return false;
 
-  if (getType(value1) === "array") return areEqualArrays(value1, value2);
-
-  if (getType(value1) !== "array" && getType(value1) === "object") {
-    return areEqualObjects(value1, value2);
+  switch (getType(value1)) {
+    case "NaN":
+      return true;
+    case "array":
+      return areEqualArrays(value1, value2);
+    case "object":
+      return areEqualObjects(value1, value2);
   }
+
   return value1 === value2;
 }
 

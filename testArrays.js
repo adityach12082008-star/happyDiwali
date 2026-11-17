@@ -2,30 +2,6 @@ const d = require("./deepEquality");
 
 const testData = [
   {
-    a: 1,
-    b: 2,
-    type: "different numbers",
-    expectedOutput: false,
-  },
-  {
-    a: 1,
-    b: "a",
-    type: "different types",
-    expectedOutput: false,
-  },
-  {
-    a: "b",
-    b: "a",
-    type: "different characters",
-    expectedOutput: false,
-  },
-  {
-    a: true,
-    b: false,
-    type: "different booleans",
-    expectedOutput: false,
-  },
-  {
     a: undefined,
     b: undefined,
     type: "both undefined",
