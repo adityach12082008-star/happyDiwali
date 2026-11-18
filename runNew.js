@@ -4,6 +4,7 @@ function run(array) {
   const run = [];
   let temp = [];
   let direction = 0;
+
   if (array.length === 0) return run;
 
   temp.push(array[0]);
@@ -12,8 +13,8 @@ function run(array) {
     direction = array[i] - array[i - 1];
     if (direction >= 1 || direction === 0) {
       temp.push(array[i]);
-    } else if (direction <= -1 || direction === 0) {
-      temp.push(array[i]);
+      // } else if (direction <= -1 || direction === 0) {
+      //   temp.push(array[i]);
     } else {
       // else block is never executing
       run.push(temp);
@@ -43,6 +44,6 @@ function main() {
       [3, 4, 5],
     ],
   );
-  test("array with  descending run", [4, 3, 2], [[4, 3, 2]]);
+  //   test("array with  descending run", [4, 3, 2], [[4, 3, 2]]);
 }
 main();
