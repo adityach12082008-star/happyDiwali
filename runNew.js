@@ -3,13 +3,14 @@ const d = require("./deepEquality");
 function run(array) {
   const run = [];
   let temp = [];
-
+  let direction = 0;
   if (array.length === 0) return run;
 
   temp.push(array[0]);
 
   for (let i = 1; i < array.length; i++) {
-    if (array[i] >= array[i - 1]) {
+    direction = array[i] - array[i - 1];
+    if (direction >= 1 || direction === 0) {
       temp.push(array[i]);
     } else {
       run.push(temp);
